@@ -1,15 +1,8 @@
-import items from './menu-items.hbs';
-import dishes from './menu.json';
-import '../images.sprite.svg';
-import './styles.css';
-
+import dishes from '../menu.json';
+import items from '../templates/menu-items.hbs';
 
 
 const menuRef = document.querySelector('.js-menu');
 
-const markup = createMenu(dishes);
+const markup = items(dishes);
 menuRef.insertAdjacentHTML('beforeend', markup);
-
-//function createMenu(dishes) {
-//    return dishes.map(items), join('');
-//}
