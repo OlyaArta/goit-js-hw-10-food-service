@@ -14,13 +14,10 @@ function onSwitch(event) {
   if(event.target.checked) {  
     localStorage.setItem('theme', Theme.DARK);
     body.classList.toggle(Theme.DARK);
-    body.classList.toggle(Theme.LIGHT);
-   // body.classList.add('dark-theme')
   }  
   else {
     localStorage.setItem('theme', Theme.LIGHT);
-    body.classList.remove(Theme.DARK);
-    body.classList.add(Theme.LIGHT);
+    body.classList.toggle(Theme.DARK); 
   }
 }
 
