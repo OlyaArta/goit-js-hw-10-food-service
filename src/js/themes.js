@@ -11,8 +11,7 @@ themeSwitchEl.addEventListener('change', onSwitch);
 
 function onSwitch(event) {
  
-  if(event.target.checked,
-     themeSwitchEl.checked = true) {  
+  if(event.target.checked) {  
     localStorage.setItem('theme', Theme.DARK);
     body.classList.toggle(Theme.DARK);
     body.classList.toggle(Theme.LIGHT);
@@ -25,3 +24,8 @@ function onSwitch(event) {
   }
 }
 
+const localStg = localStorage.getItem('theme');
+if (localStg === 'dark-theme') {
+  themeSwitchEl.checked = true;
+  body.classList.add('dark-theme');
+}
