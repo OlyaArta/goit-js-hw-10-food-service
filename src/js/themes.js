@@ -3,27 +3,25 @@ const Theme = {
     DARK: 'dark-theme',
   };
 
-const themeSwitch = window.localStorage.getItem('DARK');
-const themeCheckBox = document.getElementById('theme-switch-toggle');
-themeCheckBox.checked = (themeSwitch === "true")? true : false;
+const body = document.querySelector('body');
+body.classList.add(Theme.LIGHT);
 
-function myFunction() {
-   if(themeCheckBox.checked) {
-       document.documentElement.setAttribute('dark-theme', 'dark');
-       window.localStorage.setItem('dark-theme', true);
-   }
-   else {
-       document.documentElement.setAttribute('dark-theme', 'light');
-       window.localStorage.setItem('dark-theme', false);
-   }
+const themeSwitchEl = document.querySelector('.theme-switch__toggle');
+themeSwitchEl.addEventListener('change', onSwitch);
+
+function onSwitch(event) {
+ 
+  if(event.target.checked,
+     themeSwitchEl.checked = true) {  
+    localStorage.setItem('theme', Theme.DARK);
+    body.classList.toggle(Theme.DARK);
+    body.classList.toggle(Theme.LIGHT);
+   // body.classList.add('dark-theme')
+  }  
+  else {
+    localStorage.setItem('theme', Theme.LIGHT);
+    body.classList.remove(Theme.DARK);
+    body.classList.add(Theme.LIGHT);
+  }
 }
 
-//  const modalBox = document.querySelector('.lightbox');
-//  function onModalBOxOpen() {
-//  modalBox.classList.add('is-open');
-///  };
-  
-  // Закрытие модалки
-//  function onModalBoxClose(event) {
- //   const modalBoxOpen = document.querySelector('.lightbox');
- //   modalBoxOpen.classList.remove('is-open');
